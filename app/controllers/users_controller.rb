@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
+  def index
   end
 
-  def show
-    @user = User.find(params[:id])
+  def new
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       #user was successfully created
+      log_in @user
       flash[:success] = "You have successfully signed up."
       redirect_to @user
     else
@@ -18,6 +18,11 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def show
+    @user = User.find(params[:id])
+  end
+
 
 
 private
