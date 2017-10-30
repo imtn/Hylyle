@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+    redirect_to root_path
   end
 
   def new
@@ -18,12 +19,15 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  
+
   def show
-    @user = User.find(params[:id])
+    #User can only see their own profile page
+    if logged_in? && Integer(params[:id])==current_user.id
+      @user = current_user
+    else
+      redirect_to login_path
+    end
   end
-
-
 
 private
   def user_params

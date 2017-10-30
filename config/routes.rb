@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :users
+  resources :users do
+    resources :events
+  end
 
   get     '/login',   to: 'sessions#new'
   post    '/login',   to: 'sessions#create'

@@ -1,0 +1,25 @@
+<h1>Create an event</h1>
+
+<%= render 'shared/error_messages' %>
+
+<%= form_with(model: [ @user, @user.events.build ], local: true) do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label "Is this a deadline?" %>
+    <%= f.check_box :isDeadline %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Events</h1>
+<% if !@user.events.empty? %>
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th>Deadline?</th>
+  </tr>
+  <% @user.events.each do |event| %>
+  <tr>
+    <td><%= event.title %></td>
+    <td><%= event.description %></td>
+    <td><%= event.date %></td>
+    <td><%= event.isDeadline %></td>
+  </tr>
+  <% end %>
+<% else %>
+  <p>You have no events!</p>
+<% end %>
+</table>
