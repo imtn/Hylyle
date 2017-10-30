@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+What is this?
 
-Things you may want to cover:
+* This is a work-in-progress.
 
-* Ruby version
+* This is Hylyle, a personal assistant. At least, that what I call it - it is essentially a schedule-keeping application. It's also a small thing I made in my free time to keep myself busy when I've got nothing else to do.
 
-* System dependencies
+Well, what can it do?
 
-* Configuration
+* Right now? You can create an account and then create events.
 
-* Database creation
+Why does it look so ... bare?
 
-* Database initialization
+* Right now, it only uses rails + html, with a little bit of css. Eventually, I plan to use bootstrap, but I would like to first create functionality before I redo the look of the site.
 
-* How to run the test suite
+What functionalities do you plan to add?
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Like it says on the home page, after I get events fully working, I want to add the ability to create activities, and when that gets fully fleshed out, I'll look into improving interactiveness.
