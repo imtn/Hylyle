@@ -23,7 +23,9 @@ class UsersController < ApplicationController
   def show
     #User can only see their own profile page
     if logged_in? && Integer(params[:id])==current_user.id
-      @user = current_user
+      #do nothing, this is ideal path
+    elsif logged_in?
+      redirect_to user_path(@user)
     else
       redirect_to login_path
     end
