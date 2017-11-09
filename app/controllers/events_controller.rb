@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :get_user
   def index
+    @sorted_events = @user.events.sort_by &:date
   end
 
   def new
